@@ -28,12 +28,67 @@ public class Main {
 
 
     public static void main(String[] args) {
-        //	Replace this with your dry inventory function!
-        wet_inventory();
+        //Customer 1
+        dry_inventory(4, 1, 4);
+
+        //Customer 2
+        dry_inventory(2, 3, 0);
+
+        //Customer 3
+        dry_inventory(3, 0, 0);
+
+        //Customer 4
+        dry_inventory(1, 2, 0);
+
+        //Customer 5
+        dry_inventory(0, 6, 10);
+
+        //Customer 6
+        dry_inventory(0, 4, 5);
+
+        //Customer 7
+        dry_inventory(2, 0, 0);
+
+        //Customer 8
+        dry_inventory(10, 8, 10);
+
+        //Customer 9
+        dry_inventory(6, 0, 0);
+
+        //Customer 10
+        dry_inventory(0, 1, 0);
+
+        //Customer 11
+        dry_inventory(1, 0, 0);
+
+        //Customer 12
+        dry_inventory(0, 7, 4);
+
+        //Customer 13
+        dry_inventory(2, 0, 0);
+
+        //Customer 14
+        dry_inventory(6, 3, 0);
+
+        //Customer 15
+        dry_inventory(9, 2, 3);
     }
 
-    static void dry_inventory() {
-        // Your DRY Solution goes here!
+    static void dry_inventory(int pretzels_bought, int lemonades_bought, double amount_tipped) {
+        pretzels_available -= pretzels_bought;
+        lemonades_available -= lemonades_bought;
+        int pretzel_price = 2;
+        int lemonade_price = 8;
+        int total = (pretzel_price * pretzels_bought) + (lemonade_price * lemonades_bought);
+        cash += (total + amount_tipped);
+        System.out.println("We have " + pretzels_available + " pretzels available and " + lemonades_available + " lemonades available. Our new cash balance is $" + cash + ".");
+
+        if (pretzels_available <= 0){
+            System.out.println("We have no pretzels left!");
+        }
+        if (lemonades_available <= 0){
+            System.out.println("We have no lemonades left!");
+        }
     }
 
     static void wet_inventory() {
